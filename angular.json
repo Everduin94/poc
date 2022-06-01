@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "demo": "apps/demo",
-    "demo-e2e": "apps/demo-e2e"
+    "demo-e2e": "apps/demo-e2e",
+    "fire": "libs/fire",
+    "rest": "libs/rest",
+    "rest-backend": "apps/rest-backend"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/rest/src",
+  "prefix": "poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/rest"],
+      "options": {
+        "jestConfig": "libs/rest/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/rest/**/*.ts", "libs/rest/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
