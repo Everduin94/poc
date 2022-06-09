@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+ */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FireTicketComponent } from './fire-ticket.component';

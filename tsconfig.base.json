@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@poc/common": ["libs/common/src/index.ts"],
       "@poc/fire": ["libs/fire/src/index.ts"],
-      "@poc/rest": ["libs/rest/src/index.ts"]
+      "@poc/rest": ["libs/rest/src/index.ts"],
+      "@poc/ticket": ["libs/ticket/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

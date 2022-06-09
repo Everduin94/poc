@@ -1,12 +1,70 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { InMemoryDatabaseService, RestModule } from '@poc/rest';
+import { FireModule } from '@poc/fire';
+import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import {
+  initializeFirestore,
+  provideFirestore,
+  connectFirestoreEmulator,
+  enableIndexedDbPersistence,
+} from '@angular/fire/firestore';
+import {
+  browserPopupRedirectResolver,
+  browserSessionPersistence,
+  connectAuthEmulator,
+  indexedDBLocalPersistence,
+  initializeAuth,
+  provideAuth,
+} from '@angular/fire/auth';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
+const isDev = !environment.production;
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    RestModule,
+    FireModule,
+    environment.prototype
+      ? HttpClientInMemoryWebApiModule.forRoot(InMemoryDatabaseService, {
+          delay: 0,
+          passThruUnknownUrl: false,
+        })
+      : [],
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => {
+      const firestore = initializeFirestore(getApp(), {
+        experimentalForceLongPolling: isDev ? true : false,
+      });
+
+      if (isDev) {
+        connectFirestoreEmulator(firestore, 'localhost', 8080);
+        enableIndexedDbPersistence(firestore);
+      }
+
+      return firestore;
+    }),
+    provideAuth(() => {
+      const auth = initializeAuth(getApp(), {
+        persistence: isDev
+          ? browserSessionPersistence
+          : indexedDBLocalPersistence,
+        popupRedirectResolver: browserPopupRedirectResolver,
+      });
+
+      if (isDev) {
+        connectAuthEmulator(auth, 'http://localhost:9099');
+      }
+
+      return auth;
+    }),
+    provideStorage(() => getStorage()),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

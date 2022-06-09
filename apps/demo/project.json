@@ -46,6 +46,20 @@
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true
+        },
+        "prototype": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/demo/src/environments/environment.ts",
+              "with": "apps/demo/src/environments/environment.prototype.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"
@@ -58,6 +72,9 @@
         },
         "development": {
           "browserTarget": "demo:build:development"
+        },
+        "prototype": {
+          "browserTarget": "demo:build:prototype"
         }
       },
       "defaultConfiguration": "development"
@@ -80,6 +97,12 @@
       "options": {
         "jestConfig": "apps/demo/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "firebase": {
+      "executor": "@nxtend/firebase:firebase",
+      "options": {
+        "cmd": "--help"
       }
     }
   },

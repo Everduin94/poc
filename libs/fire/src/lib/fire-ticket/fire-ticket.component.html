@@ -1,1 +1,11 @@
-<p>fire-ticket works!</p>
+<ng-container *ngIf="tickets$ | async as tickets">
+  <ng-container *ngFor="let ticket of tickets">
+    <h1>{{ ticket.title }}</h1>
+    <h2>{{ ticket.description }}</h2>
+    <div class="info-container">
+      <div>🌱</div>
+      <div>{{ ticket.assignee }}</div>
+      <div>Assignee</div>
+    </div>
+  </ng-container>
+</ng-container>

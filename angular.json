@@ -2,10 +2,12 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "common": "libs/common",
     "demo": "apps/demo",
     "demo-e2e": "apps/demo-e2e",
     "fire": "libs/fire",
     "rest": "libs/rest",
-    "rest-backend": "apps/rest-backend"
+    "rest-backend": "apps/rest-backend",
+    "ticket": "libs/ticket"
   }
 }
