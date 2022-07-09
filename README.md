@@ -1,105 +1,55 @@
+# POC
 
+![sweet baby princesses](https://lh3.googleusercontent.com/Rf3sfx680NT-kbdH_1qvdNy3m0jvsgnnG2H2uw5Yu-yboR_VMC3AW9FcfftXZcfHAyjeGl-e2EsdkmiKOcwDztAodK4cvCalyb2vai7OVa1lFSGcmE0TzaDBGHSBTQhGYyFLDRepcYXtW_9n33Z08ay1Q8AfaVW_fwtuJgvLdsPtiOOH4WV33jleYopuduxhZ5zqSyrwnvawasJh4oXwCJqzw_ov085PzyBtpKMdteEvIo0ICQRHzw22VmSuugOSoam2cOVhtFE6FqZE4TfW6QCFLUu0I9QAADEiIDIqOVZOjPlXW46UJmjBMILDt5eWIa9aHEgwkVJ92giXZh9NV3kD9-A2mk-H_7Nd5GmvRPaCnwLNUpa7zx4VKbwkuMpUVSbuCca71LMHrtvGxA2e1XpD3HVsjB99Ewehz-eceV4TyQqPK4cMhQGVkS9PCUIEmJiOV2WjwYg4vBC6n4-ieKrVTee5uVZR3UGU70NAyF5IJfHiQFzpvjrwuiTMwtpIC3NMkKL9YDA2Kka9V_cZO8OWAfcorhIjatOMiocnHYrJib7rbDJc8MbOPXbRmPVVDv_-9QBVgmoT3tu-makyD1ffm-sVaDkZa_9-vXXtWce8pVVvy-OhimzJsKwwTC2B-mHAKmRqskAzvusxZDh7GLY7NmHOlkrkZp9dozoz-A1_2tnpPEDhyrFj63netZcpWpLsYU0NDFyfIeYkRPKHqf-gOeQ5VHvh4bqI63PKBlOUFMywP2eN2CtCftc=w1641-h983-no?authuser=0)
 
-# Poc
+## Articles
+- Angular Prototyping
+- (Firebase) Angular Prototyping
+- [Setup a custom environment with Nx](https://erxk.medium.com/nx-setup-a-custom-environment-116342b7815b)
+### Angular Prototying
 
-This project was generated using [Nx](https://nx.dev).
+![thumbnail](https://cdn-images-1.medium.com/max/800/1*GNxxrAItOWu7k6aeiQ270Q.png)
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+Dependencies:
+- Node.js version 8.0 or higher
 
-🔎 **Smart, Fast and Extensible Build System**
+Commands ($ means shell, don't add it):
+```
+// Install Dependencies
+$ npm i 
 
-## Quick Start & Documentation
+// Run App
+$ nx run demo:serve:prototype
+$ ng serve configuration=prototype
 
-[Nx Documentation](https://nx.dev/angular)
+// Run jest (unit tests)
+$ nx run demo:test
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+// Cypress 
+$ nx run demo-e2e:e2e --watch
+```
 
-[Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
+### (Firebase) Angular Prototying
 
-## Adding capabilities to your workspace
+![thumbnail](https://cdn-images-1.medium.com/max/800/1*nAXb_SB7_5uAS0C3hCRHLA.png)
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+Dependencies:
+- Node.js version 8.0 or higher
+- Java version 1.8 or higher
+- Firebase CLI 8.14.0 or higher
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+Commands ($ means shell, don't add it):
+```
+// Install Dependencies
+$ npm install -g firebase-tools
+$ npm install 
 
-Below are our core plugins:
+// You may have to update app.component.html
+  // (It's basically my template junk-drawer lol)
+// Run app (Make sure you're in root)
+$ firebase emulators:start  --import=./apps/demo/poc-data
+$ nx run demo:serve
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@poc/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-
-
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+// Run Cypress
+$ nx run demo-e2e:e2e --watch
+```
