@@ -4,7 +4,7 @@ import { take, tap } from 'rxjs';
 import { TicketService } from './ticket.service';
 
 @Component({
-  selector: 'poc-ticket',
+  selector: 'poc-ticket-rest',
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.scss'],
 })

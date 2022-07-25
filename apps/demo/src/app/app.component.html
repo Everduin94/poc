@@ -1,5 +1,13 @@
-<poc-ticket></poc-ticket>
-
-<div class="ticket-container">
-  <!-- <poc-fire-ticket></poc-fire-ticket> -->
-</div>
+<poc-ticket-layout class="custom-side-nav custom-main custom-related">
+  <ng-template #side>
+    <div>A</div>
+  </ng-template>
+  <ng-template #main>
+    <div>
+      <poc-ticket-rest></poc-ticket-rest>
+    </div>
+  </ng-template>
+  <ng-template #related>
+    <div>A</div>
+  </ng-template>
+</poc-ticket-layout>

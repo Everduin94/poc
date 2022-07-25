@@ -1,1 +1,23 @@
-<p>ticket-details works!</p>
+<div class="header">
+  <div class="title-container">
+    <div class="title">
+      {{ ticket.title }}
+    </div>
+    <div
+      class="status-token"
+      [ngClass]="{
+        'red-bg': ticket.status == 'blocked',
+        'blue-bg': ticket.status == 'in progress',
+        'green-bg': ticket.status == 'complete',
+        'white-bg': ticket.status == 'assigned'
+      }"
+    >
+      {{ ticket.status }}
+    </div>
+    <!-- <div class="status-token"> -->
+    <!--   {{ ticket.status }} -->
+    <!-- </div> -->
+  </div>
+  <div class="button-container"></div>
+</div>
+<div class="body"></div>

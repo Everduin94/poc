@@ -3,3 +3,50 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+
+/* Tokyo Night */
+:root {
+  --red: #f7768e;
+  --orange: #ff9e64;
+  --yellow: #e0af68;
+  --green: #9ece6a;
+  --terminal-green: #73daca;
+  --terminal-blue: #b4f9f8;
+  --turqoise: #2ac3de;
+  --light-blue: #7dcfff;
+  --blue: #7aa2f7;
+  --purple: #bb9af7;
+  --white-one: #c0caf5;
+  --white-two: #a9b1d6;
+  --white-three: #9aa5ce;
+  --white-four: #cfc9c2;
+  --black-four: #565f89;
+  --black-three: #414868;
+  --black-two: #24283b;
+  --black-one: #1a1b26;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.red-bg {
+  background-color: var(--red);
+  color: var(--black-one);
+}
+
+.blue-bg {
+  background-color: var(--blue);
+  color: var(--black-one);
+}
+
+.green-bg {
+  background-color: var(--terminal-green);
+  color: var(--black-one);
+}
+
+.white-bg {
+  background-color: var(--white-one);
+  color: var(--black-one);
+}

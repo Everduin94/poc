@@ -4,6 +4,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { DevelopmentDetailsComponent } from './development-details/development-details.component';
+import { TicketDetailsPipe } from './ticket-details/ticket-details.pipe';
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
@@ -11,6 +12,7 @@ import { DevelopmentDetailsComponent } from './development-details/development-d
     TicketComponent,
     TicketDetailsComponent,
     DevelopmentDetailsComponent,
+    TicketDetailsPipe,
   ],
   exports: [TicketComponent],
 })

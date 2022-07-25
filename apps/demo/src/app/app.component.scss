@@ -1,4 +1,14 @@
-.ticket-container {
-  display: grid;
-  margin: 20px;
+.custom-side-nav {
+  --background-side-nav-value: var(--black-two);
+  --color-side-nav-value: var(--white-one);
+}
+
+.custom-main {
+  --background-main-content-value: var(--black-three);
+  --color-main-content-value: var(--white-one);
+}
+
+.custom-related {
+  --background-related-content-value: var(--black-three);
+  --color-related-content-value: var(--white-one);
 }

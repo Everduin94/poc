@@ -1,0 +1,23 @@
+:host {
+  display: grid;
+  grid-template-columns: var(--side-nav-column, 250px) 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100%;
+}
+.side-nav {
+  background: var(--background-side-nav-value, white);
+  color: var(--color-side-nav-value, black);
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: var(--background-main-content-value, white);
+  color: var(--color-main-content-value, black);
+}
+
+.related-content {
+  background: var(--background-related-content-value, white);
+  color: var(--color-related-content-value, black);
+}

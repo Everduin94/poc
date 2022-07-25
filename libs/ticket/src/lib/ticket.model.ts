@@ -1,3 +1,5 @@
+export type TicketStatus = 'in progress' | 'assigned' | 'complete' | 'blocked';
+export type TicketType = 'story' | 'bug';
 export interface Ticket {
   id: string;
   title: string;
@@ -5,4 +7,6 @@ export interface Ticket {
   assignee?: string;
   description?: string;
   storyPoints?: string;
+  status: TicketStatus;
+  type: TicketType;
 }

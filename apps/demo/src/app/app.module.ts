@@ -22,6 +22,8 @@ import {
   provideAuth,
 } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { TicketModule } from '@poc/ticket';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const isDev = !environment.production;
 @NgModule({
@@ -64,6 +66,8 @@ const isDev = !environment.production;
       return auth;
     }),
     provideStorage(() => getStorage()),
+    TicketModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

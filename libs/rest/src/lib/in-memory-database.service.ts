@@ -15,24 +15,28 @@ export class InMemoryDatabaseService implements InMemoryDbService {
         title: 'Update effect',
         assignee: 'Erxk',
         description: 'Add an update effect',
+        status: 'in progress',
       },
       {
         id: '2',
         title: 'Delete effect',
         assignee: 'Erxk',
         description: 'Add a delete effect',
+        status: 'blocked',
       },
       {
         id: '3',
         title: 'Refactor mat-chip',
         assignee: 'Erxk',
         description: 'Remove material from mat-chip',
+        status: 'assigned',
       },
       {
         id: '4',
         title: 'Fix more-options',
         assignee: 'Erxk',
         description: 'Fix animation on hover',
+        status: 'complete',
       },
       {
         id: '5',
