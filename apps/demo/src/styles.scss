@@ -29,6 +29,7 @@
 body {
   height: 100vh;
   box-sizing: border-box;
+  background: var(--black-three);
 }
 
 .red-bg {
@@ -49,4 +50,17 @@ body {
 .white-bg {
   background-color: var(--white-one);
   color: var(--black-one);
+}
+
+// Determined via lowering/raising hsl
+.bug-token {
+  background: #fbb7c3;
+  color: #f6607b;
+}
+
+// Determined via lowering/raising hsl
+// - Had to darken green color significantly
+.story-token {
+  background: #9ae4d9;
+  color: #2ba18f;
 }

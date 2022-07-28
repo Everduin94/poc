@@ -1,24 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Ticket } from '@poc/ticket';
-
-// export interface Ticket {
-//   id: string;
-//   title: string;
-//   reporter?: string;
-//   assignee?: string;
-//   description?: string;
-//   storyPoints?: string;
-// }
+import { TicketVm } from './ticket-details.pipe';
 
 @Component({
   selector: 'poc-ticket-details',
   templateUrl: './ticket-details.component.html',
   styleUrls: ['./ticket-details.component.scss'],
 })
-export class TicketDetailsComponent implements OnInit {
-  @Input() ticket!: Ticket;
+export class TicketDetailsComponent {
+  @Input() ticket!: TicketVm;
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  // calculateUpdatedDateLabel(ticket) {
+  // const today = new Date();
+  // const differenceInTime = today.getTime() - date;
+  // const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+  // if (differenceInDays < 1) return `Today`;
+  // if (differenceInDays === 1) return `Yesterday`;
+  // return `${differenceInDays} Days Ago`;
+  // }
 }

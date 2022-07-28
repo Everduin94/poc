@@ -12,9 +12,66 @@
     margin-top: 5px; // Adjust for fontsize differences
     font-size: 14px;
     border-radius: 4px;
-    padding: 2px 5px;
+    padding: 1px 5px;
     letter-spacing: 0.2px;
     font-weight: 500;
     width: max-content;
+  }
+}
+
+.updated-container {
+  display: grid;
+  grid-template-columns: 100px max-content;
+  gap: 6px;
+  margin-bottom: 10px;
+
+  .updated-label {
+    padding-right: 10px;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+  }
+}
+
+.value {
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.label {
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: var(--white-three);
+  font-size: 15px;
+}
+
+.type-container {
+  display: grid;
+  grid-template-columns: 100px repeat(2, max-content);
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  margin-bottom: 10px;
+
+  .type-label {
+    padding-right: 10px;
+  }
+
+  .type-icon {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+
+  .this {
+    grid-column: max-content 1fr;
+    padding: 20px;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, max-content);
+    padding: 20px;
   }
 }

@@ -3,21 +3,35 @@
     <div class="title">
       {{ ticket.title }}
     </div>
-    <div
-      class="status-token"
-      [ngClass]="{
-        'red-bg': ticket.status == 'blocked',
-        'blue-bg': ticket.status == 'in progress',
-        'green-bg': ticket.status == 'complete',
-        'white-bg': ticket.status == 'assigned'
-      }"
-    >
-      {{ ticket.status }}
-    </div>
-    <!-- <div class="status-token"> -->
+    <!-- <div -->
+    <!--   class="status-token" -->
+    <!--   [ngClass]="{ -->
+    <!--     'red-bg': ticket.status == 'blocked', -->
+    <!--     'blue-bg': ticket.status == 'in progress', -->
+    <!--     'green-bg': ticket.status == 'complete', -->
+    <!--     'white-bg': ticket.status == 'assigned' -->
+    <!--   }" -->
+    <!-- > -->
     <!--   {{ ticket.status }} -->
     <!-- </div> -->
+    <div class="status-token" [ngClass]="ticket.statusClass">
+      {{ ticket.status }}
+    </div>
   </div>
+  <div class="type-container">
+    <div class="type-label label">Type:</div>
+    <div class="type-icon" [ngClass]="ticket.typeClass">
+      <fa-icon [icon]="ticket.typeIcon"></fa-icon>
+    </div>
+    <div class="type-value value">{{ ticket.type }}</div>
+  </div>
+  <div class="updated-container">
+    <div class="updated-label label">Updated:</div>
+    <div class="updated-value value">{{ ticket.updatedDateLabel }}</div>
+  </div>
+  <!-- <div class="updated-container"> -->
+  <!--   <div class="updated-label">{{ calculateUpdatedDateLabel(ticket) }}</div> -->
+  <!-- </div> -->
   <div class="button-container"></div>
 </div>
 <div class="body"></div>

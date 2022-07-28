@@ -1,0 +1,9 @@
+.ticket {
+  margin-left: 10px;
+  padding: 10px;
+  transition: all 0.3s linear;
+}
+
+.ticket--active {
+  background: var(--blue);
+}

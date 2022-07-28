@@ -9,4 +9,5 @@ export interface Ticket {
   storyPoints?: string;
   status: TicketStatus;
   type: TicketType;
+  lastUpdated: number; // From Date
 }

@@ -8,7 +8,7 @@ export type TicketVm = Ticket & {
   statusClass: string;
   typeIcon: any; // There's a type for this but my lsp is being lame
   typeClass: string;
-  createdDateLabel: string;
+  updatedDateLabel: string;
 };
 
 @Pipe({
@@ -21,27 +21,36 @@ export class TicketDetailsPipe implements PipeTransform {
       statusClass: resolveStatusClass(ticket.status),
       typeIcon: resolveTypeIcon(ticket.type),
       typeClass: resolveTypeClass(ticket.type),
-      createdDateLabel: '',
+      updatedDateLabel: resolveNumOfDays(ticket.lastUpdated),
     };
   }
 }
 
+function resolveNumOfDays(date: number) {
+  const today = new Date();
+  const differenceInTime = today.getTime() - date;
+  const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+  if (differenceInDays < 1) return `Today`;
+  if (differenceInDays === 1) return `Yesterday`;
+  return `${differenceInDays} Days Ago`;
+}
+
 function resolveTypeIcon(type: TicketType) {
-  if (type == 'bug') return faBug;
-  if (type == 'story') return faBook;
+  if (type === 'bug') return faBug;
+  if (type === 'story') return faBook;
   else return faQuestion;
 }
 
 function resolveTypeClass(type: TicketType) {
-  if (type == 'bug') return 'red-bg';
-  if (type == 'story') return 'green-bg';
+  if (type === 'bug') return 'bug-token';
+  if (type === 'story') return 'story-token';
   else return 'blue-bg';
 }
 
 function resolveStatusClass(status: TicketStatus) {
-  if (status == 'complete') return 'green-bg';
-  if (status == 'assigned') return 'white-bg';
-  if (status == 'in progress') return 'blue-bg';
-  if (status == 'blocked') return 'red-bg';
+  if (status === 'complete') return 'green-bg';
+  if (status === 'assigned') return 'white-bg';
+  if (status === 'in progress') return 'blue-bg';
+  if (status === 'blocked') return 'red-bg';
   return '';
 }

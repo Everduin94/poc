@@ -12,12 +12,27 @@
 
 .main-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  justify-self: center;
   background: var(--background-main-content-value, white);
   color: var(--color-main-content-value, black);
+}
+
+.test {
+}
+.test {
+  padding: 20px;
+  grid-template-columns: repeat(2, max-content);
 }
 
 .related-content {
   background: var(--background-related-content-value, white);
   color: var(--color-related-content-value, black);
+}
+
+.test {
+  // delete me
+  padding: 20px;
+  // can you see this?
+  // What about me can you see me ?
 }

@@ -1,0 +1,11 @@
+<ng-container *ngIf="ticketVm$ | async as ticketVm">
+  <ng-container *ngFor="let ticket of ticketVm.tickets">
+    <button
+      class="ticket"
+      (click)="setActive(ticket.id)"
+      [class.ticket--active]="ticket === ticketVm.activeTicket"
+    >
+      {{ ticket.id }}
+    </button>
+  </ng-container>
+</ng-container>

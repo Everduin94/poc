@@ -28,6 +28,10 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@ngneat/effects": "^1.1.1",
+    "@ngneat/effects-ng": "^2.0.0",
+    "@ngneat/elf": "^2.1.0",
+    "@ngneat/elf-entities": "^4.3.1",
     "@nrwl/angular": "14.4.3",
     "@nxtend/firebase": "^12.1.0",
     "angular-in-memory-web-api": "^0.13.0",
@@ -73,5 +77,14 @@
     "ts-jest": "27.1.4",
     "ts-node": "10.8.2",
     "typescript": "4.7.4"
+  },
+  "elf": {
+    "cli": {
+      "repoTemplate": "class",
+      "inlineStoreInClass": true,
+      "idKey": "id",
+      "repoLibrary": "state",
+      "plugins": []
+    }
   }
 }
